@@ -5,15 +5,26 @@
             LOGO
         </x-mail::header>
     </x-slot:header>
-    # <div class="header-mail">Merhaba!</div>
-    Email adresinizi doğrulamak için lütfen aşağıdaki düğmeyi tıklayın.
 
-    <x-mail::button :url="$url">
-        Mail Adresimi Doğrula
+    # <div class="header-mail">Merhaba!</div>
+
+    Bu maili Hesabınız için bir şifre sıfırlama isteği yaptığınız için alıyorsunuz.
+
+    <x-mail::button :url="$url">>
+        Şifremi Yenile
     </x-mail::button>
-    Email adresinizi doğrulamak için lütfen aşağıdaki düğmeyi tıklayın.
+
+    Şifre Yenileme Talebinde Bulunmadıysanız işlem yapmanız gerek yoktur.
+
     Teşekkürler,<br>
-    Ayşe TAŞ
+      Ayşe TAŞ
+    <x-slot:subcopy>
+        <x-mail::subcopy>
+            Şifremi Yenile butonuna tıklamada sorun yaşıyorsanız aşağıdaki URL'yi kopyalayıp web tarayıcınıza yapıştırın:
+            [{{ $url }}]({{ $url }})
+        </x-mail::subcopy>
+    </x-slot:subcopy>
+
     {{-- Footer --}}
     <x-slot:footer>
         <x-mail::footer>
